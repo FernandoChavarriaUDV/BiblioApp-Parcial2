@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card>
+    <h2>Login BiblioApp</h2>
+
+    <form [formGroup]="form" (ngSubmit)="ingresar()">
+      
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="full">
+        Ingresar
+      </button>
+
+    </form>
+  </mat-card>
+</div>
