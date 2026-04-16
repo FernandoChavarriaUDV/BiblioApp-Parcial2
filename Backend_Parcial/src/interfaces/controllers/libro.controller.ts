@@ -18,17 +18,26 @@ export class LibroController {
       const disponibles: any[] = [];
 
       for (const libro of libros) {
-        const reservas = await ReservaModel.count({
+        const reservasActivas = await ReservaModel.count({
           where: {
             libro_id: libro.get('id') as number,
             estado: 'ACTIVA'
           }
         });
 
-        const stock = Number(libro.get('stock'));
+        const stockTotal = Number(libro.get('stock'));
+        const stockDisponible = stockTotal - reservasActivas;
 
-        if (reservas < stock) {
-          disponibles.push(libro);
+        if (stockDisponible > 0) {
+          disponibles.push({
+            id: libro.get('id'),
+            titulo: libro.get('titulo'),
+            isbn: libro.get('isbn'),
+            anio_publicacion: libro.get('anio_publicacion'),
+            categoria_id: libro.get('categoria_id'),
+            stock: stockTotal,
+            stock_disponible: stockDisponible
+          });
         }
       }
 
