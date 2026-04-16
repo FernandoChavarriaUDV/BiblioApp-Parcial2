@@ -5,4 +5,5 @@ export interface Libro {
   anio_publicacion: number;
   categoria_id: number;
   stock: number;
+  stock_disponible?: number;
 }

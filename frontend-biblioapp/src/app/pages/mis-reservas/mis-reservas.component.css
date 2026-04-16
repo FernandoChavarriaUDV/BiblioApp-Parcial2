@@ -1,11 +1,14 @@
-.container {
-  padding: 24px;
+.estado-activa {
+  color: green;
+  font-weight: bold;
 }
 
-.acciones-superiores {
-  margin-bottom: 20px;
+.estado-cancelada {
+  color: red;
+  font-weight: bold;
 }
 
-.full-width {
-  width: 100%;
+.estado-devuelta {
+  color: gray;
+  font-weight: bold;
 }

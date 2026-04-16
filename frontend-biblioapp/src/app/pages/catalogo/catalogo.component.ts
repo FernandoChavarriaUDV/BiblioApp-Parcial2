@@ -21,7 +21,7 @@ import { ReservaService } from '../../services/reserva.service';
 })
 export class CatalogoComponent implements OnInit {
   libros: Libro[] = [];
-  displayedColumns: string[] = ['id', 'titulo', 'isbn', 'stock', 'acciones'];
+  displayedColumns: string[] = ['id', 'titulo', 'isbn', 'stock_disponible', 'acciones'];
 
   constructor(
     private libroService: LibroService,
